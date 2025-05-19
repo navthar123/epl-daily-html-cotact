@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Myntra Beauty Products</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-size: 28px;
+      color: #ff3f6c;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .hero {
+      background: url('https://assets.myntassets.com/f_webp,w_600,q_60,dpr_1.5/assets/images/2023/3/17/fab1d8a5-7e8c-4d86-bc25-fc8b63d2337f1679047091113-Banner-Beauty--1-.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+    }
+
+    .product-card p {
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .price {
+      color: #ff3f6c;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background-color: #ff3f6c;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #e63358;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Myntra</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">Beauty</a>
+      <a href="#">Offers</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    Discover Top Beauty Picks
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="data:image/webp;base64,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" />
+      <h3>Matte Lipstick</h3>
+      <p>Rich color & long lasting</p>
+      <div class="price">₹499</div>
+      <button class="btn">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR_NkDSZZjSTmIcsvyPSbnjIdiX0TJtOCUst7S6VKZCNCm8NpUzD7oXANzQWUPje9bBsti5qFIgdbHDe1gEDYq6KChs8HQPT6RtSn0bvgs"/>
+      <h3>Face Serum</h3>
+      <p>Vitamin C enriched</p>
+      <div class="price">₹399</div>
+      <button class="btn">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/51iBYJzdNIL.jpg" />
+      <h3>Hydrating Cream</h3>
+      <p>For all skin types</p>
+      <div class="price">₹349</div>
+      <button class="btn">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.meesho.com/images/products/421115155/nwdl8_1200.jpg">
+      
+      <h3>Waterproof Eyeliner</h3>
+      <p>Smudge-proof finish</p>
+      <div class="price">₹299</div>
+      <button class="btn">Buy Now</button>
+    </div>
+  </div>
+
+</body>
+</html>
